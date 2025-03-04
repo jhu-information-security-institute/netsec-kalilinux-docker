@@ -4,7 +4,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: 'csalab/kalilinux-docker:${VERSION:-latest}'
+    image: 'jhu-information-security-institute/netsec-kalilinux-docker:${VERSION:-latest}'
     restart: always
     cap_add:
       - NET_ADMIN
