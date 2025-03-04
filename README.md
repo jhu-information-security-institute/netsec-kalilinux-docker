@@ -30,9 +30,9 @@ To start the Kali Linux desktop in a browser, follow these steps:
     ```
     cd kalilinux-docker
     ```
-3. Pull the required Docker images:
+3. Build the required Docker image:
     ```
-    docker-compose pull
+    docker-compose build
     ```
 4. Set the password for the environment:
     ```
