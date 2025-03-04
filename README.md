@@ -24,7 +24,7 @@ To start the Kali Linux desktop in a browser, follow these steps:
 
 1. Clone the repository:
     ```
-    git clone https://github.com/csalab-id/kalilinux-docker.git
+    git clone https://github.com/jhu-information-security-institute/netsec-kalilinux-docker.git
     ```
 2. Navigate to the repository directory:
     ```
