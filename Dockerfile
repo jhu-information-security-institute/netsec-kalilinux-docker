@@ -1,4 +1,4 @@
-FROM kalilinux/kali-rolling:latest
+FROM kalilinux/kali-last-snapshot:latest
 LABEL maintainer="admin@csalab.id"
 RUN sed -i "s/http.kali.org/mirrors.ocf.berkeley.edu/g" /etc/apt/sources.list && \
     apt-get update && \
