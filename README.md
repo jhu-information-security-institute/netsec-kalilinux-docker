@@ -28,7 +28,7 @@ To start the Kali Linux desktop in a browser, follow these steps:
     ```
 2. Navigate to the repository directory:
     ```
-    cd kalilinux-docker
+    cd netsec-kalilinux-docker
     ```
 3. Build the required Docker image:
     ```
