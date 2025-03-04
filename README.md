@@ -88,3 +88,7 @@ This Docker Compose application is released under the MIT License. See the [LICE
 # Disclaimer
 
 The software developed and distributed for hacking purposes is intended for educational and testing purposes only. The use of this software for any illegal activity is strictly prohibited. The developers and distributors of the software are not liable for any damages or legal consequences resulting from the misuse of the software.
+
+# Credits
+
+Many thanks to https://github.com/csalab-id/kalilinux-docker for creation of the original repository with this content!
