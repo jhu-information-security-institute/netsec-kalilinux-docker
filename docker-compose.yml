@@ -1,18 +1,26 @@
+#To build:
+#$ docker-compose build
+#To run:
+#$ docker-compose up
 services:
-  kalilinux:
-    hostname: kalilinux.lab
+  kalilinux:   
+    #hostname: kalilinux.lab #only declare hostname when using network_mode=host
     build:
       context: ./
       dockerfile: Dockerfile
-    image: 'jhu-information-security-institute/netsec-kalilinux-docker:${VERSION:-latest}'
+    image: 'jhu-information-security-institute/netsec-kalilinux-docker:${VERSION:-latest}' #Override default `latest` by setting $VERSION environment variable
     restart: always
     cap_add:
       - NET_ADMIN
-    ports:
-      - 0.0.0.0:8080:8080
+    ############################################################
+    #either use mapped ports or network_mode=host, not both
+    #ports:
+    #  - 0.0.0.0:8080:8080
+    network_mode: host
+    ############################################################
     environment:
       - SHELL=/bin/bash
-      - PASSWORD=${PASSWORD:-kalilinux}
+      - PASSWORD=${PASSWORD:-kalilinux} #Override default `kalilinux` by setting $PASSWORD environment variable
     volumes:
       - data:/home/kali/Desktop
     entrypoint: ["/bin/bash", "/startup.sh"]
