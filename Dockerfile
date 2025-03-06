@@ -1,5 +1,5 @@
 FROM kalilinux/kali-last-release:latest
-LABEL maintainer="admin@csalab.id"
+LABEL maintainer="reub@jhu.edu"
 RUN sed -i "s/http.kali.org/mirrors.ocf.berkeley.edu/g" /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y upgrade
@@ -27,10 +27,10 @@ RUN apt-get -y autoremove && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -m -c "Kali Linux" -s /bin/bash -d /home/kali kali && \
-    sed -i "s/#ListenAddress 0.0.0.0/ListenAddress 0.0.0.0/g" /etc/ssh/sshd_config && \
     sed -i "s/off/remote/g" /usr/share/novnc/app/ui.js && \
     echo "kali ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
     touch /usr/share/novnc/index.htm
+RUN mkdir /run/dbus
 COPY startup.sh /startup.sh
 USER kali
 WORKDIR /home/kali
