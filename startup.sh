@@ -7,6 +7,8 @@ if [ ! -f ~/.Xauthority ]; then
     touch ~/.Xauthority
 fi
 rm -rf ~/.vnc/*.pid ~/.vnc/*.log /tmp/.X1*
+echo -e "${PASSWORD}\n${PASSWORD}" | sudo passwd kali
+sudo service ssh start
 vncpasswd -f <<< ${PASSWORD} > ~/.vnc/passwd
 sudo dbus-daemon --config-file=/usr/share/dbus-1/system.conf
 vncserver -PasswordFile ~/.vnc/passwd

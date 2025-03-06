@@ -27,6 +27,8 @@ RUN apt-get -y autoremove && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -m -c "Kali Linux" -s /bin/bash -d /home/kali kali && \
+    sed -i "s/#ListenAddress 0.0.0.0/ListenAddress 0.0.0.0/g" /etc/ssh/sshd_config && \
+    sed -i "s/#Port 22/Port 2222/g" /etc/ssh/sshd_config && \
     sed -i "s/off/remote/g" /usr/share/novnc/app/ui.js && \
     echo "kali ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
     touch /usr/share/novnc/index.htm
