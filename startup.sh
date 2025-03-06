@@ -8,6 +8,10 @@ if [ ! -f ~/.Xauthority ]; then
 fi
 rm -rf ~/.vnc/*.pid ~/.vnc/*.log /tmp/.X1*
 vncpasswd -f <<< ${PASSWORD} > ~/.vnc/passwd
-vncserver -PasswordFile ~/.vnc/passwd
 sudo dbus-daemon --config-file=/usr/share/dbus-1/system.conf
+vncserver -PasswordFile ~/.vnc/passwd
 /usr/share/novnc/utils/novnc_proxy --listen 8080 --vnc 127.0.0.1:5901
+############################################################
+#to troubleshoot: comment out the failing instructions above and uncomment command below (just runs indefinitely)
+#tail -f /dev/null
+############################################################
