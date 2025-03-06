@@ -8,6 +8,13 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+      args:
+        USERNAME: ${USERNAME:-kali} #Override default `kali` by setting $USERNAME environment variable
+        PASSWORD: ${PASSWORD:-kalilinux} #Override default `kalilinux` by setting $PASSWORD environment variable
+        KALISHELL: /bin/bash
+        NOVNCPORT: ${NOVNCPORT:-8080}
+        VNCPORT: ${VNCPORT:-5901}
+        SSHPORT: ${SSHPORT:-2222}
     image: 'jhu-information-security-institute/netsec-kalilinux-docker:${VERSION:-latest}' #Override default `latest` by setting $VERSION environment variable
     restart: always
     cap_add:
@@ -19,10 +26,14 @@ services:
     network_mode: host
     ############################################################
     environment:
-      - SHELL=/bin/bash
+      - USER=${USERNAME:-kali} #Override default `kali` by setting $USERNAME environment variable
       - PASSWORD=${PASSWORD:-kalilinux} #Override default `kalilinux` by setting $PASSWORD environment variable
+      - SHELL=${KALISHELL:-/bin/bash}
+      - NOVNCPORT=${NOVNCPORT:-8080}
+      - VNCPORT=${VNCPORT:-5901} 
+      - SSHPORT=${SSHPORT:-2222}
     volumes:
-      - data:/home/kali/Desktop
+      - /mnt/dockershared:/mnt/dockershared #Available on host in /mnt/dockershared
     entrypoint: ["/bin/bash", "/startup.sh"]
 
 volumes:

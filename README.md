@@ -30,15 +30,25 @@ To start the Kali Linux desktop in a browser, follow these steps:
     ```
     cd netsec-kalilinux-docker
     ```
-3. Build the required Docker image:
+3. Make a directory for bind mount and set your user to own it or have access permissions
+   ```
+   mkdir /mnt/dockershared
+   chown <USER>:<USER> /mnt/dockershared
+   ```
+4. Optionally set environment variables for the environment:
+    ```
+    export USERNAME="student"
+    export PASSWORD="netsec123"
+    export KALISHELL="/bin/bash"
+    export NOVNCPORT=8080
+    export VNCPORT=5901
+    export SSHPORT=2222
+    ```
+5. Build the required Docker image:
     ```
     docker-compose build
     ```
-4. Set the password for the environment:
-    ```
-    export PASSWORD="YourVNCPassword"
-    ```
-5. Start the containers:
+6. Start the containers:
     ```
     docker-compose up
     ```
@@ -57,17 +67,6 @@ By default, when you run docker-compose up, the application will start in the fo
 docker-compose up -d
 ```
 This will start all the containers in detached mode and return control to the terminal. You can use the docker-compose logs command to view the logs for the running containers.
-
-If you have limited disk space on your computer, you can opt for an alternative image version with a smaller size. You can try the following commands:
-```
-export VERSION=slim
-docker-compose pull
-docker-compose up -d
-```
-
-By setting the VERSION environment variable to "slim", the docker-compose pull command will fetch the smaller-sized image. Then, you can use docker-compose up -d to start the environment.
-
-This approach allows you to conserve disk space while still being able to run the environment effectively.
 
 To stop the application when running in detached mode, you can use the docker-compose down command. This will stop and remove all the containers, networks, and volumes associated with the application.
 
