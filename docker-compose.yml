@@ -10,7 +10,6 @@ services:
       - NET_ADMIN
     ports:
       - 0.0.0.0:8080:8080
-    network_mode: "host"
     environment:
       - SHELL=/bin/bash
       - PASSWORD=${PASSWORD:-kalilinux}
