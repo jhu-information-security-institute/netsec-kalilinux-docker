@@ -9,7 +9,7 @@ fi
 rm -rf ~/.vnc/*.pid ~/.vnc/*.log /tmp/.X1*
 echo -e "${PASSWORD}\n${PASSWORD}" | sudo passwd "${USER}"
 sudo service ssh start
-sudo chown "${USERNAME}:${USERNAME}" /mnt/shared
+sudo chown "${USERNAME}:${USERNAME}" /mnt/dockershared
 vncpasswd -f <<< ${PASSWORD} > ~/.vnc/passwd
 sudo dbus-daemon --config-file=/usr/share/dbus-1/system.conf
 vncserver -PasswordFile ~/.vnc/passwd
