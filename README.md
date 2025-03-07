@@ -33,7 +33,7 @@ To start the Kali Linux desktop in a browser, follow these steps:
 3. Make a directory for bind mount and set your user to own it or have access permissions
    ```
    sudo mkdir /mnt/dockershared
-   chown <USER>:<USER> /mnt/dockershared
+   sudo chown <USER>:<USER> /mnt/dockershared
    ```
 4. Optionally set environment variables for the environment:
     ```
