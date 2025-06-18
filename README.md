@@ -46,25 +46,25 @@ To start the Kali Linux desktop in a browser, follow these steps:
     ```
 5. Build the required Docker image:
     ```
-    docker-compose build
+    docker compose build
     ```
 6. Start the containers:
     ```
-    docker-compose up
+    docker compose up
     ```
 
 This will start all the containers, and you should be able to access the web application at http://localhost:8080/vnc.html
 
 To stop the application, you can either press CTRL+C in the terminal window where you started the application or run the following command:
 ```
-docker-compose down
+docker compose down
 ```
 
 ## Running in Detached Mode
 
 By default, when you run docker-compose up, the application will start in the foreground and log output will be displayed in the terminal window. If you want to run the application in the background, you can use the -d (or --detach) option. For example:
 ```
-docker-compose up -d
+docker compose up -d
 ```
 This will start all the containers in detached mode and return control to the terminal. You can use the docker-compose logs command to view the logs for the running containers.
 
