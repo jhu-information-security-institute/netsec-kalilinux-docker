@@ -37,11 +37,11 @@ To start the Kali Linux desktop in a browser, follow these steps:
    ```
 4. Optionally set environment variables for the environment:
     ```
-    export USERNAME="student"
-    export PASSWORD="netsec123"
-    export KALISHELL="/bin/bash"
-    export NOVNCPORT=8080
-    export VNCPORT=5901
+    export USERNAME="student";
+    export PASSWORD="netsec123";
+    export KALISHELL="/bin/bash";
+    export NOVNCPORT=8080;
+    export VNCPORT=5901;
     export SSHPORT=2222
     ```
 5. Build the required Docker image:
