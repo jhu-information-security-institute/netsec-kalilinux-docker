@@ -39,12 +39,12 @@ To run this Docker Compose application, you need to have the following software 
     ```
     * Default values are below:
     ```
-    USER=${USERNAME:-kali} #Override default `kali` by setting $USERNAME environment variable
-    PASSWORD=${PASSWORD:-kalilinux} #Override default `kalilinux` by setting $PASSWORD environment variable
-    SHELL=${KALISHELL:-/bin/bash}
-    NOVNCPORT=${NOVNCPORT:-8080}
-    VNCPORT=${VNCPORT:-5901} 
-    SSHPORT=${SSHPORT:-2222}
+    USER=-kali
+    PASSWORD=kalilinux
+    SHELL=/bin/bash
+    NOVNCPORT=8080
+    VNCPORT=5901 
+    SSHPORT=2222
     ```
 5. Build the required Docker image:
     ```
