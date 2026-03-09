@@ -52,13 +52,12 @@ To start the Kali Linux desktop in a browser, follow these steps:
     ```
     docker compose up
     ```  
-This will start all the containers, and you should be able to access the web application at http://localhost:8080/vnc.html
+This will start all the containers.  You can access the web application by opening a web browser and navigating to http://localhost:8080/vnc.html.  Click connect and use the password specified above to authenticate.
 
 To stop the application, you can either press CTRL+C in the terminal window where you started the application or run the following command:
 ```
 docker compose down
 ```
-7. You can access the web application by opening a web browser and navigating to http://localhost:8080/vnc.html.  Click connect and use the password specified above to authenticate.
 
 ## Running in Detached Mode
 
