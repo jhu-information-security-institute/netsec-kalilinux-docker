@@ -1,6 +1,6 @@
 # Kali Linux desktop on the browser
 
-This repository contains a Docker Compose application that runs single containers to provide a kali linux desktop on the browser.
+This repository contains a Docker Compose application that runs a container with a kali linux desktop and is accessible from the browser.
 
 ![Screenshoot](.github/images/screenshoot.png)
 
