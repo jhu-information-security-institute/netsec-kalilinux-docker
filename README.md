@@ -10,8 +10,6 @@ This Docker Compose application includes the following containers:
 
 - Kalilinux: A web server running NoVNC with Kali Linux Desktop environment.
 
-Default password for this container is: kalilinux
-
 # Requirements
 
 To run this Docker Compose application, you need to have the following software installed on your machine:
@@ -34,14 +32,19 @@ To run this Docker Compose application, you need to have the following software 
    sudo mkdir /mnt/dockershared
    sudo chown <USER>:<USER> /mnt/dockershared
    ```
-4. Optionally set environment variables for the environment:
+4. Optionally set environment variables (USER, PASSWORD, SHELL, NOVNCPORT, VNCPORT, SSHPORT) for the environment:
     ```
     export USERNAME="student";
     export PASSWORD="nwsec123";
-    export KALISHELL="/bin/bash";
-    export NOVNCPORT=8080;
-    export VNCPORT=5901;
-    export SSHPORT=2222
+    ```
+    * Default values are below:
+    ```
+    USER=${USERNAME:-kali} #Override default `kali` by setting $USERNAME environment variable
+    PASSWORD=${PASSWORD:-kalilinux} #Override default `kalilinux` by setting $PASSWORD environment variable
+    SHELL=${KALISHELL:-/bin/bash}
+    NOVNCPORT=${NOVNCPORT:-8080}
+    VNCPORT=${VNCPORT:-5901} 
+    SSHPORT=${SSHPORT:-2222}
     ```
 5. Build the required Docker image:
     ```
@@ -75,7 +78,7 @@ Note that when running in detached mode, you will not see any log output in the 
 
 This Docker Compose application exposes the following ports:
 
-- 8080: A custom port used to access the web application (NoVNC) running in the Kalilinux container.
+- 8080 (default): A custom port used to access the web application (NoVNC) running in the Kalilinux container.
 
 When you start the application using docker-compose up, these ports will be exposed on your local machine.
 
