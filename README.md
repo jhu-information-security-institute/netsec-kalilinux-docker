@@ -38,7 +38,7 @@ To start the Kali Linux desktop in a browser, follow these steps:
 4. Optionally set environment variables for the environment:
     ```
     export USERNAME="student";
-    export PASSWORD="netsec123";
+    export PASSWORD="nwsec123";
     export KALISHELL="/bin/bash";
     export NOVNCPORT=8080;
     export VNCPORT=5901;
