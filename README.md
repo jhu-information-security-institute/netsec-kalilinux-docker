@@ -20,7 +20,7 @@ To run this Docker Compose application, you need to have the following software 
 - Docker Compose
 
 # Usage
-## Build the container
+## Create the container
 1. Clone the repository:
     ```
     git clone https://github.com/jhu-information-security-institute/netsec-kalilinux-docker.git
